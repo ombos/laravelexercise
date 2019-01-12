@@ -64381,7 +64381,7 @@ function (_Component) {
 
       axios__WEBPACK_IMPORTED_MODULE_0___default.a.get('/api/offers').then(function (response) {
         _this2.setState({
-          offers: response.data
+          offers: response
         });
       });
     }
@@ -64404,9 +64404,9 @@ function (_Component) {
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
         className: "btn btn-primary btn-sm mb-3",
         to: "/create"
-      }, "Create new project"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("ul", {
+      }, "Create new offer"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("ul", {
         className: "list-group list-group-flush"
-      }, offers.map(function (offer) {
+      }, offers.data.map(function (offer) {
         return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
           className: "list-group-item list-group-item-action d-flex justify-content-between align-items-center",
           to: "/".concat(offer.id),
@@ -64421,7 +64421,7 @@ function (_Component) {
   return OffersList;
 }(react__WEBPACK_IMPORTED_MODULE_1__["Component"]);
 
-/* harmony default export */ __webpack_exports__["default"] = (ProjectsList);
+/* harmony default export */ __webpack_exports__["default"] = (OffersList);
 
 /***/ }),
 

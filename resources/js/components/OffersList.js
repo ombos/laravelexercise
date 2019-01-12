@@ -13,7 +13,7 @@ class OffersList extends Component {
   componentDidMount () {
     axios.get('/api/offers').then(response => {
       this.setState({
-        offers: response.data
+        offers: response
       })
     })
   }
@@ -28,10 +28,10 @@ class OffersList extends Component {
               <div className='card-header'>Oferty pracy</div>
               <div className='card-body'>
                 <Link className='btn btn-primary btn-sm mb-3' to='/create'>
-                  Create new project
+                  Create new offer
                 </Link>
                 <ul className='list-group list-group-flush'>
-                  {offers.map(offer => (
+                  {offers.data.map(offer => (
                     <Link
                       className='list-group-item list-group-item-action d-flex justify-content-between align-items-center'
                       to={`/${offer.id}`}
@@ -53,4 +53,4 @@ class OffersList extends Component {
   }
 }
 
-export default ProjectsList
+export default OffersList
