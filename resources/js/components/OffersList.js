@@ -13,7 +13,7 @@ class OffersList extends Component {
   componentDidMount () {
     axios.get('/api/offers').then(response => {
       this.setState({
-        offers: response
+        offers: response.data
       })
     })
   }
@@ -21,29 +21,27 @@ class OffersList extends Component {
   render () {
     const { offers } = this.state
     return (
-      <div className='container py-4'>
+      <div className='container-fluid py-4'>
         <div className='row justify-content-center'>
-          <div className='col-md-8'>
+          <div className='col-12'>
             <div className='card'>
               <div className='card-header'>Oferty pracy</div>
               <div className='card-body'>
-                <Link className='btn btn-primary btn-sm mb-3' to='/create'>
-                  Create new offer
-                </Link>
-                <ul className='list-group list-group-flush'>
-                  {offers.data.map(offer => (
+                {offers.map(offer => (
+                  <div className='row'>
+                    <div className="col-md-5">{offer.content.title}</div>
+                    <div className="col-md-4">{offer.cities}</div>
+                    <div className="col-md-2">
                     <Link
-                      className='list-group-item list-group-item-action d-flex justify-content-between align-items-center'
-                      to={`/${offer.id}`}
-                      key={offer.id}
-                    >
-                      test test test nazwa oferty tytuł czy coś
-                      <span className='badge badge-primary badge-pill'>
-                        jakieś podsumowanie
-                      </span>
-                    </Link>
-                  ))}
-                </ul>
+                        className='btn btn-primary btn-sm mb-3'
+                        to={`/offer/${offer.id}`}
+                        key={offer.id}
+                      >
+                        Szczegóły
+                      </Link>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
           </div>

@@ -64381,7 +64381,7 @@ function (_Component) {
 
       axios__WEBPACK_IMPORTED_MODULE_0___default.a.get('/api/offers').then(function (response) {
         _this2.setState({
-          offers: response
+          offers: response.data
         });
       });
     }
@@ -64390,31 +64390,32 @@ function (_Component) {
     value: function render() {
       var offers = this.state.offers;
       return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "container py-4"
+        className: "container-fluid py-4"
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "row justify-content-center"
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
-        className: "col-md-8"
+        className: "col-12"
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "card"
       }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "card-header"
       }, "Oferty pracy"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
         className: "card-body"
-      }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-        className: "btn btn-primary btn-sm mb-3",
-        to: "/create"
-      }, "Create new offer"), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("ul", {
-        className: "list-group list-group-flush"
-      }, offers.data.map(function (offer) {
-        return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
-          className: "list-group-item list-group-item-action d-flex justify-content-between align-items-center",
-          to: "/".concat(offer.id),
+      }, offers.map(function (offer) {
+        return react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+          className: "row"
+        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+          className: "col-md-5"
+        }, offer.content.title), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+          className: "col-md-4"
+        }, offer.cities), react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("div", {
+          className: "col-md-2"
+        }, react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement(react_router_dom__WEBPACK_IMPORTED_MODULE_2__["Link"], {
+          className: "btn btn-primary btn-sm mb-3",
+          to: "/offer/".concat(offer.id),
           key: offer.id
-        }, "test test test nazwa oferty tytu\u0142 czy co\u015B", react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement("span", {
-          className: "badge badge-primary badge-pill"
-        }, "jakie\u015B podsumowanie"));
-      })))))));
+        }, "Szczeg\xF3\u0142y")));
+      }))))));
     }
   }]);
 
