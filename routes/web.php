@@ -11,4 +11,5 @@
 |
 */
 
+Route::view('/offer/{id}', 'offer');
 Route::view('/{path?}', 'app');

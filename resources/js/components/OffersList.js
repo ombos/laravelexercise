@@ -20,6 +20,7 @@ class OffersList extends Component {
 
   render () {
     const { offers } = this.state
+    
     return (
       <div className='container-fluid py-4'>
         <div className='row justify-content-center'>
