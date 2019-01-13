@@ -20,7 +20,7 @@ class OffersList extends Component {
 
   render () {
     const { offers } = this.state
-    
+
     return (
       <div className='container-fluid py-4'>
         <div className='row justify-content-center'>
@@ -29,7 +29,7 @@ class OffersList extends Component {
               <div className='card-header'>Oferty pracy</div>
               <div className='card-body'>
                 {offers.map(offer => (
-                  <div className='row'>
+                  <div className='row offer-element'>
                     <div className="col-md-5">{offer.content.title}</div>
                     <div className="col-md-4">{offer.cities}</div>
                     <div className="col-md-2">

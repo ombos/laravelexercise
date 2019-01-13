@@ -7,7 +7,7 @@ class Offer extends Component {
     super(props)
     this.state = {
       offer: {},
-      content: {}
+      content: {},
     }
   }
 
@@ -38,7 +38,11 @@ class Offer extends Component {
                 <div className="row">
                   <div className='col-md-8' dangerouslySetInnerHTML={{__html: content.content}}></div>
                   <div className='col-md-4'>
-                    <a href={`${content.url}`} target="_blank" className='btn btn-primary btn-lg btn-block mb-4'>Aplikuj</a>
+                    <div className='col-md-12'>
+                      <a href={`${content.apply_url}`} target="_blank" className='btn btn-primary btn-lg btn-block mb-5'>Aplikuj</a>
+                    </div>
+                    <div className='col-md-12 mb-3'>Lokalizacja: <strong>{offer.cities}</strong></div>
+                    <div className='col-md-12 mb-3'>Oferta ważna do: <strong>{offer.date_end}</strong></div>
                   </div>
                 </div>
               </div>
