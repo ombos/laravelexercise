@@ -19,3 +19,4 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 
 Route::get('offers', 'OfferController@getoffers');
 Route::get('offer/{id}', 'OfferController@showoffer');
+Route::get('page/{id}', 'PageController@showpage');

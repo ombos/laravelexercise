@@ -11,7 +11,6 @@
 |
 */
 
-Route::view('/offer/{id}', 'offer');
-Route::view('/about', 'page');
-Route::view('/contact', 'page');
+Route::view('/offer/{id}', 'app');
+Route::view('/page/{id}', 'app');
 Route::view('/{path?}', 'app');

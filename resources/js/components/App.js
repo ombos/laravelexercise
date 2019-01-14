@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom'
 import { BrowserRouter, Route, Switch } from 'react-router-dom'
 import LoadingScreen from 'react-loading-screen'
 import Header from './Header'
+import Page from './Page'
 import OffersList from './OffersList'
 import Offer from './Offer'
 
@@ -37,8 +38,7 @@ class App extends Component {
           <Switch>
             <Route exact path='/' component={OffersList} />
             <Route path='/offer/:id' component={Offer} />
-            <Route path='/about' component={OffersList} />
-            <Route path='/contact' component={OffersList} />
+            <Route path='/page/:id' component={Page} />
           </Switch>
         </div>
       </BrowserRouter>
