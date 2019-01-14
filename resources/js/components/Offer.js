@@ -32,7 +32,7 @@ class Offer extends Component {
           <div className='col-12'>
             <div className='card'>
               <div className='card-header'>
-                <h1>{content.title}</h1>
+                <h1>{content.title ? content.title : offer.admin_name}</h1>
               </div>
               <div className='card-body'>
                 <div className="row">
@@ -42,7 +42,9 @@ class Offer extends Component {
                       <a href={`${content.apply_url}`} target="_blank" className='btn btn-primary btn-lg btn-block mb-5'>Aplikuj</a>
                     </div>
                     <div className='col-md-12 mb-3'>Lokalizacja: <strong>{offer.cities}</strong></div>
-                    <div className='col-md-12 mb-3'>Oferta ważna do: <strong>{offer.date_end}</strong></div>
+                    {offer.date_end && (
+                      <div className='col-md-12 mb-3'>Oferta ważna do: <strong>{offer.date_end}</strong></div>
+                    )}
                   </div>
                 </div>
               </div>

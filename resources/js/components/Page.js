@@ -1,5 +1,6 @@
 import axios from 'axios'
 import React, { Component } from 'react'
+import { Redirect } from 'react-router';
 import { Link } from 'react-router-dom'
 
 class Page extends Component {
@@ -14,14 +15,18 @@ class Page extends Component {
     const pageId = this.props.match.params.id
 
     axios.get(`/api/page/${pageId}`).then(response => {
-      this.setState({
-        page: response.data,
-      })
+        this.setState({
+          page: response.data,
+        })
+    }).catch(function (error) {
+      return (
+        <Redirect to="/"/>
+      )
     })
   }
 
   render () {
-    
+
     const { page } = this.state
 
     return (

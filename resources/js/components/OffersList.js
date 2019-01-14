@@ -30,7 +30,7 @@ class OffersList extends Component {
               <div className='card-body'>
                 {offers.map(offer => (
                   <div className='row offer-element'>
-                    <div className="col-md-5">{offer.content.title}</div>
+                    <div className="col-md-5">{offer.content.title ? offer.content.title : offer.admin_name}</div>
                     <div className="col-md-4">{offer.cities}</div>
                     <div className="col-md-2">
                     <Link

@@ -9,7 +9,12 @@ class PageController extends Controller
 {
     public function showpage($id) {
 
-      $page = Page::findOrFail($id);
-      return $page->toJson();
+      $page = Page::find($id);
+
+      if ($page) {
+        return $page->toJson();
+      } else {
+        abort(404);
+      }
     }
 }
